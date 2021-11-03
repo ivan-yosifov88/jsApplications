@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "res"></div>
+    <button id="add-btn">Get data</button>
+    <script>
+    const addButton = document.querySelector('#add-btn');
+    const resultDiv = document.querySelector('#res');
+    addButton.addEventListener('click', function(){
+        let request = fetch('https://api.github.com/users/testnakov/repos')
+        console.log(request)
+        request
+        .then(response => {
+            console.log(response)
+            const promiseResponse = response.json()
+            console.log(promiseResponse)
+            promiseResponse
+            .then(promise => {
+                promise.forEach(promise => resultDiv.textContent += promise.name)
+            })
+        })
+    })
+    </script>
+</body>
+</html>
