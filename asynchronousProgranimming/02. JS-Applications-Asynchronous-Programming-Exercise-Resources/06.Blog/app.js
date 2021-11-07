@@ -1,5 +1,5 @@
 function attachEvents() {
-    const postsUrl = 'http://localhost:3030/jsonstore/blog/post';
+    const postsUrl = 'http://localhost:3030/jsonstore/blog/posts';
     const baseCommentsUrl = 'http://localhost:3030/jsonstore/blog/comments';
     const selectMenu = document.querySelector('#posts');
     const loadPostsButton = document.querySelector('#btnLoadPosts');
